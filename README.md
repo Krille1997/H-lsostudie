@@ -54,3 +54,29 @@ Python 3.14.7 för att analysera datan och skapat tabeller och diagram för att 
 - All kod, grafer och förklaringar ska finnas i Jupyter Notebook.
 - Del 1 lämnas in via GitHub på branch del1.
 - Del 2 lämnas in via GitHub på branch del2.
+
+Del 2 – Fördjupning och pipeline
+
+För G ska du göra:
+
+Strukturera koden
+- Flytta delar av din kod från del 1 till funktioner och moduler.
+- Skapa minst en klass (t.ex. HealthAnalyzer) som kan utföra någon del av analysen (t.ex. beräkna statistik eller rita grafer).
+
+Linjär algebra i praktiken
+- Använd numpy eller scikit-learn för en analys som bygger på matriser/vektorer.
+- Exempel:
+- En enkel linjär regression för att förutsäga blodtryck från ålder eller vikt.
+- PCA för att hitta mönster i datan.
+
+Utökad analys och visualisering
+- Lägg till minst en ny analys eller graf som ger en djupare förståelse (t.ex. relationen mellan blodtryck och ålder, eller sjukdomsförekomst per kön).
+
+Dokumentation
+- Skriv docstrings till dina funktioner/klasser.
+- Använd markdown-rutor för att förklara vad du gör och varför.
+
+För VG ska du även göra:
+- Bygg en mer utvecklad klass som kan hantera flera olika analyser eller visualiseringar.
+- Använd en mer avancerad metod (t.ex. multipel regression) eller en extra visualisering som tydligt förklarar resultaten.
+- Motivera dina metodval i markdown och hänvisa till dokumentation eller annan källa.
