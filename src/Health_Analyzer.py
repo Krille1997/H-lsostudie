@@ -1,5 +1,6 @@
 import numpy as np
 from scipy.stats import ttest_ind
+from sklearn.linear_model import LinearRegression
 
 class HealthAnalyzer:
     def __init__(self, df):
@@ -75,3 +76,12 @@ class HealthAnalyzer:
 
         power = antal_skillnad / R
         return power, antal_skillnad
+
+    def regression(self):
+         age_weight = self.df[["age", "weight"]]
+         blodtryck = self.df["systolic_bp"]
+
+         model = LinearRegression()
+         model.fit(age_weight, blodtryck)
+
+         return model, age_weight, blodtryck
