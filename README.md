@@ -1,5 +1,27 @@
 # Hälsostudie – Individuell uppgift
 
+Python 3.14.7 för att analysera datan och skapat tabeller och diagram för att visa resultaten.
+
+## Projekt/mappstruktur
+
+* Data/ – Innehåller CSV-filen
+
+* Notebooks/Report.ipynb – Här finns vår rapport med analyser och diagram.
+
+* src/ – Innehåller funktioner som används i rapporten.
+
+* requirements.txt – Bibliotek som behövs för att köra projektet.
+
+## Så kör du projektet
+
+* Ladda ner projektet från GitHub.
+
+* Öppna projektet i Visual Studio Code.
+
+* Installera biblioteken med pip install -r requirements.txt.
+
+* Öppna notebooks/report.ipynb och kör cellerna uppifrån och ned.
+
 ## Del 1 – Grundläggande analys och statistik
 
 ### G-krav
