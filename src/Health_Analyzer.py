@@ -24,6 +24,18 @@ class HealthAnalyzer:
     def bootstrap_mean(self, bp_boot, rng):
         pop = rng.choice(bp_boot, size=len(bp_boot), replace=True)
         return pop.mean()
+    def bootstrap_intervall(self):
+         bp_boot = self.df["systolic_bp"].to_numpy()
+         rng = np.random.default_rng(42)
+         
+         R = 1000
+         
+         means_n1000 = np.array([self.bootstrap_mean(bp_boot, rng) for _ in range(R)])
+         
+         under_boot = np.percentile(means_n1000, 2.5)
+         upper_boot = np.percentile(means_n1000, 97.5)
+
+         return under_boot, upper_boot
     
     def hypotes_test(self):
             smoker = self.df.loc[self.df["smoker"] == "Yes", "systolic_bp"]
@@ -37,3 +49,29 @@ class HealthAnalyzer:
             )
 
             return smoker, non_smoker, t_stat, p_value
+
+    def power_sim(self):
+        smoker = self.df.loc[self.df["smoker"] == "Yes", "systolic_bp"]
+        non_smoker = self.df.loc[self.df["smoker"] == "No", "systolic_bp"]
+
+        antal_skillnad = 0
+        R = 1000
+
+        for i in range(R):
+            sim_smoker = smoker.sample(n=len(smoker), replace=True)
+            sim_non_smoker = non_smoker.sample(n=len(non_smoker), replace=True)
+
+            sim_smoker = sim_smoker - smoker.mean() + non_smoker.mean() + 2
+
+            t_stat, p_value = ttest_ind(
+                sim_smoker,
+                sim_non_smoker,
+                equal_var=False,
+                alternative="greater"
+            )
+
+            if p_value < 0.05:
+                antal_skillnad += 1
+
+        power = antal_skillnad / R
+        return power, antal_skillnad
