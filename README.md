@@ -1,56 +1,39 @@
 # Hälsostudie – Individuell uppgift
 
+# Hälsostudie – Del 1
+
+## Om projektet
+
+I denna uppgift har jag analyserat hälsodata från 800 personer för att undersöka samband mellan bland annat ålder, vikt, rökning och blodtryck.
+
+## Vad jag har gjort
+
+- Beräknat beskrivande statistik som medelvärde, median, min och max.
+- Skapat tre grafer för att visa olika samband i datan.
+- Simulerat hälsodata med NumPy.
+- Beräknat 95 % konfidensintervall med normalapproximation och bootstrap.
+- Gjort ett t-test för att undersöka om rökare har högre blodtryck än icke-rökare.
+- Genomfört en power-simulering för att undersöka hur ofta testet hittar en skillnad.
+
+## Projektstruktur
+
+Projektet är uppdelat i följande mappar och filer:
+
+- Data/ innehåller datasetet.
+- Notebook/Report.ipynb innehåller rapporten med kod, grafer och förklaringar.
+- src/Health_Analyzer.py innehåller funktioner för statistik.
+- src/Health_Fig.py innehåller funktioner för grafer.
+- Figures/ innehåller sparade grafer.
+- requirements.txt innehåller biblioteken som används.
+
+## Köra projektet
+
+1. Ladda ner projektet från GitHub.
+2. Installera biblioteken med pip install -r requirements.txt.
+3. Öppna Notebook/Report.ipynb i VS Code.
+4. Välj rätt Python-miljö.
+5. Kör alla celler med Restart & Run All.
+
+## Python-version
+
 Python 3.14.7 för att analysera datan och skapat tabeller och diagram för att visa resultaten.
-
-## Projekt/mappstruktur
-
-* Data/ – Innehåller CSV-filen
-
-* Notebooks/Report.ipynb – Här finns vår rapport med analyser och diagram.
-
-* src/ – Innehåller funktioner som används i rapporten.
-
-* requirements.txt – Bibliotek som behövs för att köra projektet.
-
-## Så kör du projektet
-
-* Ladda ner projektet från GitHub.
-
-* Öppna projektet i Visual Studio Code.
-
-* Installera biblioteken med pip install -r requirements.txt.
-
-* Öppna notebooks/report.ipynb och kör cellerna uppifrån och ned.
-
-## Del 1 – Grundläggande analys och statistik
-
-### G-krav
-
-1. Beskrivande analys
-- Beräkna medelvärde, median, min och max för age, weight, height, systolic_bp och cholesterol.
-- Skapa minst 3 olika grafer.
-
-2. Simulering
-- Beräkna andelen personer med sjukdom.
-- Simulera 1000 personer med NumPy (random + seed).
-- Jämför simulerad andel med verklig andel.
-
-3. Konfidensintervall
-- Beräkna konfidensintervall för medelvärdet av systolic_bp.
-
-4. Hypotesprövning
-- Testa om rökare har högre medelblodtryck än icke-rökare.
-- Använd exempelvis bootstrap eller t-test.
-- Förklara resultatet i Markdown.
-
-### VG-krav
-
-1. Beräkna konfidensintervall med två olika metoder och jämför resultaten.
-2. Gör en power-simulering för att undersöka hur säkert hypotesprövningen upptäcker en verklig skillnad.
-3. Motivera metodval i Markdown och hänvisa till dokumentation eller annan källa.
-
-## Inlämning
-
-- All kod, grafer och förklaringar ska finnas i Jupyter Notebook.
-- Del 1 lämnas in via GitHub på branch del1.
-- Del 2 lämnas in via GitHub på branch del2.
