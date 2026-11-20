@@ -50,4 +50,29 @@ class HealthFig:
         fig.savefig("../Figures/blodtryck hos rökare.png", dpi=150)
         plt.show()
 
+    def fig_regression(self, blodtryck, prediktion, residualer):
+          fig, scatter = plt.subplots()
+
+          scatter.scatter(prediktion, residualer, alpha=0.5)
+          scatter.axhline(y=0, color="red", linestyle="--")
+          scatter.set_xlabel("Förväntat provresultat")
+          scatter.set_ylabel("Residualer")
+          scatter.set_title("Residualdiagram")
+          plt.show()
+
+    def fig_regression_2(self, age_weight, blodtryck, prediktion):
+        fig, scatter = plt.subplots()
         
+        scatter.scatter(prediktion, blodtryck, alpha=0.5)
+        
+        scatter.plot(
+            [blodtryck.min(), blodtryck.max()],
+            [blodtryck.min(), blodtryck.max()],
+            color="red",
+            linestyle="--"
+            )
+        
+        scatter.set_xlabel("Förutsagt blodtryck")
+        scatter.set_ylabel("Verkligt blodtryck")
+        scatter.set_title("Verkligt och förutsagt blodtryck")
+        plt.show()

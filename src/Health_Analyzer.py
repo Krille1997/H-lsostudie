@@ -84,4 +84,8 @@ class HealthAnalyzer:
          model = LinearRegression()
          model.fit(age_weight, blodtryck)
 
-         return model, age_weight, blodtryck
+         prediktion = model.predict(age_weight)
+
+         residualer = blodtryck - prediktion
+
+         return model, age_weight, blodtryck, prediktion, residualer
