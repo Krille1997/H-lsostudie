@@ -20,28 +20,33 @@ I första delen har jag arbetat med:
 I andra delen har jag:
 
 - Delat upp koden i funktioner och moduler
-- Skapat klassen `HealthAnalyzer` för statistiska beräkningar
-- Skapat klassen `HealthFig` för grafer
-- Använt multipel linjär regression med ålder och vikt för att undersöka blodtrycket
-- Skapat ett residualdiagram och en graf som jämför verkligt och beräknat blodtryck
+- Skapat klassen "HealthAnalyzer" för statistiska beräkningar
+- Skapat klassen "HealthFig" för grafer
+- Använt multipel linjär regression för att undersöka sambandet mellan ålder, vikt och blodtryck.
+- Skapat två nya grafer som visar hur bra modellen räknar ut blodtrycket.
+- Använt residualer för att se hur mycket modellen räknar fel.
 
 ## Projektstruktur
 
-- `Data/` – Hälsodatasetet
-- `Notebook/Report.ipynb` – Rapport med kod, grafer och förklaringar
-- `src/Health_Analyzer.py` – Funktioner för statistik och analyser
-- `src/Health_Fig.py` – Funktioner för visualiseringar
-- `Figures/` – Sparade grafer
-- `requirements.txt` – Bibliotek som används i projektet
+Projektet är uppdelat i följande mappar:
 
-## Installation och körning
+- Data innehåller datasetet.
+- Figures innehåller sparade grafer.
+- Notebook innehåller rapporten Report.ipynb.
+- src innehåller två Python-filer:
+  - Health_Analyzer.py används för beräkningar och analyser.
+  - Health_Fig.py används för att skapa grafer.
+- README.md beskriver projektet.
+- requirements.txt innehåller biblioteken som behövs.
+
+## Köra projektet
 
 1. Ladda ner projektet från GitHub.
-2. Installera biblioteken med `pip install -r requirements.txt`.
-3. Öppna `Notebook/Report.ipynb` i VS Code.
+2. Installera biblioteken med pip install -r requirements.txt.
+3. Öppna Notebook/Report.ipynb i VS Code.
 4. Välj rätt Python-miljö.
-5. Kör notebooken från början till slut med **Restart & Run All**.
+5. Kör alla celler med Restart & Run All.
 
 ## Python-version
 
-Python-version: **Fyll i din Python-version här.**
+Projektet är gjort med Python 3.14.7.
