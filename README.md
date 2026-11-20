@@ -43,9 +43,9 @@ Projektet är uppdelat i följande mappar:
 
 1. Ladda ner projektet från GitHub.
 2. Installera biblioteken med pip install -r requirements.txt.
-3. Öppna Notebook/Report.ipynb i VS Code.
+3. Öppna Notebook/Report.ipynb
 4. Välj rätt Python-miljö.
-5. Kör alla celler med Restart & Run All.
+5. Tryck på "Run All" för att köra alla celler.
 
 ## Python-version
 

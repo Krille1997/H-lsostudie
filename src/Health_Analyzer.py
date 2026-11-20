@@ -31,6 +31,7 @@ class HealthAnalyzer:
         """Slumpar fram ett nytt urval och beräknar medelvärdet."""
         pop = rng.choice(bp_boot, size=len(bp_boot), replace=True)
         return pop.mean()
+    
     def bootstrap_intervall(self):
          """Använder 1000 bootstrap-urval för att beräkna ett 95 % konfidensintervall."""
          bp_boot = self.df["systolic_bp"].to_numpy()
@@ -61,6 +62,8 @@ class HealthAnalyzer:
 
     def power_sim(self):
         """Simulerar 1000 t-test med en skillnad på 2 i blodtryck för att beräkna power."""
+        rng = np.random.default_rng(42)
+
         smoker = self.df.loc[self.df["smoker"] == "Yes", "systolic_bp"]
         non_smoker = self.df.loc[self.df["smoker"] == "No", "systolic_bp"]
 
@@ -68,8 +71,8 @@ class HealthAnalyzer:
         R = 1000
 
         for i in range(R):
-            sim_smoker = smoker.sample(n=len(smoker), replace=True)
-            sim_non_smoker = non_smoker.sample(n=len(non_smoker), replace=True)
+            sim_smoker = rng.choice(smoker, size=len(smoker), replace=True)
+            sim_non_smoker = rng.choice(non_smoker, size=len(non_smoker), replace=True)
 
             sim_smoker = sim_smoker - smoker.mean() + non_smoker.mean() + 2
 
