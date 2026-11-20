@@ -2,10 +2,14 @@ import matplotlib.pyplot as plt
 from IPython.display import display
 
 class HealthFig:
+    """Används för att skapa grafer från hälsodatan."""
+
     def __init__(self, df):
+        """Sparar datasetet så att det kan användas för graferna."""
         self.df = df
 
     def fig_weight_age(self):
+        """Skapar en graf som visar sambandet mellan ålder och vikt."""
         medelvikt = self.df["weight"].mean()
 
         fig, scatter = plt.subplots()
@@ -21,6 +25,7 @@ class HealthFig:
         plt.show()
 
     def fig_smoker_disease(self):
+        """Skapar en graf som jämför sjukdomsförekomst hos rökare och icke-rökare."""
         smoker_disease = self.df.groupby("smoker")["disease"].mean() * 100
         
         fig, bar = plt.subplots()
@@ -35,6 +40,7 @@ class HealthFig:
         plt.show()
 
     def fig_smoker_bp(self):
+        """Skapar en graf som jämför medelblodtrycket hos rökare och icke-rökare."""
         smoker_bp = self.df.groupby("smoker")["systolic_bp"].mean()
 
         display(smoker_bp.round(2))
@@ -51,6 +57,7 @@ class HealthFig:
         plt.show()
 
     def fig_regression(self, blodtryck, prediktion, residualer):
+          """Skapar ett residualdiagram som visar skillnaden mellan verkligt och beräknat blodtryck."""
           fig, scatter = plt.subplots()
 
           scatter.scatter(prediktion, residualer, alpha=0.5)
@@ -62,6 +69,7 @@ class HealthFig:
           plt.show()
 
     def fig_regression_2(self, blodtryck, prediktion):
+        """Skapar en graf som jämför verkligt och beräknat blodtryck."""
         fig, scatter = plt.subplots()
         
         scatter.scatter(prediktion, blodtryck, alpha=0.5)
