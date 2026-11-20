@@ -21,8 +21,7 @@ Projektet är uppdelat i följande mappar och filer:
 
 - Data/ innehåller datasetet.
 - Notebook/Report.ipynb innehåller rapporten med kod, grafer och förklaringar.
-- src/Health_Analyzer.py innehåller funktioner för statistik.
-- src/Health_Fig.py innehåller funktioner för grafer.
+- src/Health_Analyzer.py innehåller två funktioner för statistik och bootstrap.
 - Figures/ innehåller sparade grafer.
 - requirements.txt innehåller biblioteken som används.
 
