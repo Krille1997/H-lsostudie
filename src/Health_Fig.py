@@ -55,12 +55,13 @@ class HealthFig:
 
           scatter.scatter(prediktion, residualer, alpha=0.5)
           scatter.axhline(y=0, color="red", linestyle="--")
-          scatter.set_xlabel("Förväntat provresultat")
-          scatter.set_ylabel("Residualer")
           scatter.set_title("Residualdiagram")
+          scatter.set_xlabel("Förväntat blodtryck")
+          scatter.set_ylabel("Residualer")
+          fig.savefig("../Figures/regression.png", dpi=150)
           plt.show()
 
-    def fig_regression_2(self, age_weight, blodtryck, prediktion):
+    def fig_regression_2(self, blodtryck, prediktion):
         fig, scatter = plt.subplots()
         
         scatter.scatter(prediktion, blodtryck, alpha=0.5)
@@ -71,8 +72,9 @@ class HealthFig:
             color="red",
             linestyle="--"
             )
-        
-        scatter.set_xlabel("Förutsagt blodtryck")
+
+        scatter.set_title("Verkligt och beräknat blodtryck")
+        scatter.set_xlabel("Beräknat blodtryck")
         scatter.set_ylabel("Verkligt blodtryck")
-        scatter.set_title("Verkligt och förutsagt blodtryck")
+        fig.savefig("../Figures/regression_2.png", dpi=150)
         plt.show()
