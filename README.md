@@ -1,82 +1,47 @@
 # Hälsostudie – Individuell uppgift
 
-Python 3.14.7 för att analysera datan och skapat tabeller och diagram för att visa resultaten.
+## Om projektet
 
-## Projekt/mappstruktur
+I detta projekt analyserar jag hälsodata från 800 personer. Syftet är att undersöka samband mellan bland annat ålder, vikt, rökning och blodtryck.
 
-* Data/ – Innehåller CSV-filen
+## Del 1 – Statistik
 
-* Notebooks/Report.ipynb – Här finns vår rapport med analyser och diagram.
+I första delen har jag arbetat med:
 
-* src/ – Innehåller funktioner som används i rapporten.
+- Beräknat beskrivande statistik som medelvärde, median, min och max.
+- Skapat tre grafer för att visa olika samband i datan.
+- Simulerat hälsodata med NumPy.
+- Beräknat 95 % konfidensintervall med normalapproximation och bootstrap.
+- Gjort ett t-test för att undersöka om rökare har högre blodtryck än icke-rökare.
+- Genomfört en power-simulering för att undersöka hur ofta testet hittar en skillnad.
 
-* requirements.txt – Bibliotek som behövs för att köra projektet.
+## Del 2 – Fördjupning
 
-## Så kör du projektet
+I andra delen har jag:
 
-* Ladda ner projektet från GitHub.
+- Delat upp koden i funktioner och moduler
+- Skapat klassen `HealthAnalyzer` för statistiska beräkningar
+- Skapat klassen `HealthFig` för grafer
+- Använt multipel linjär regression med ålder och vikt för att undersöka blodtrycket
+- Skapat ett residualdiagram och en graf som jämför verkligt och beräknat blodtryck
 
-* Öppna projektet i Visual Studio Code.
+## Projektstruktur
 
-* Installera biblioteken med pip install -r requirements.txt.
+- `Data/` – Hälsodatasetet
+- `Notebook/Report.ipynb` – Rapport med kod, grafer och förklaringar
+- `src/Health_Analyzer.py` – Funktioner för statistik och analyser
+- `src/Health_Fig.py` – Funktioner för visualiseringar
+- `Figures/` – Sparade grafer
+- `requirements.txt` – Bibliotek som används i projektet
 
-* Öppna notebooks/report.ipynb och kör cellerna uppifrån och ned.
+## Installation och körning
 
-## Del 1 – Grundläggande analys och statistik
+1. Ladda ner projektet från GitHub.
+2. Installera biblioteken med `pip install -r requirements.txt`.
+3. Öppna `Notebook/Report.ipynb` i VS Code.
+4. Välj rätt Python-miljö.
+5. Kör notebooken från början till slut med **Restart & Run All**.
 
-### G-krav
+## Python-version
 
-1. Beskrivande analys
-- Beräkna medelvärde, median, min och max för age, weight, height, systolic_bp och cholesterol.
-- Skapa minst 3 olika grafer.
-
-2. Simulering
-- Beräkna andelen personer med sjukdom.
-- Simulera 1000 personer med NumPy (random + seed).
-- Jämför simulerad andel med verklig andel.
-
-3. Konfidensintervall
-- Beräkna konfidensintervall för medelvärdet av systolic_bp.
-
-4. Hypotesprövning
-- Testa om rökare har högre medelblodtryck än icke-rökare.
-- Använd exempelvis bootstrap eller t-test.
-- Förklara resultatet i Markdown.
-
-### VG-krav
-
-1. Beräkna konfidensintervall med två olika metoder och jämför resultaten.
-2. Gör en power-simulering för att undersöka hur säkert hypotesprövningen upptäcker en verklig skillnad.
-3. Motivera metodval i Markdown och hänvisa till dokumentation eller annan källa.
-
-## Inlämning
-
-- All kod, grafer och förklaringar ska finnas i Jupyter Notebook.
-- Del 1 lämnas in via GitHub på branch del1.
-- Del 2 lämnas in via GitHub på branch del2.
-
-Del 2 – Fördjupning och pipeline
-
-För G ska du göra:
-
-Strukturera koden
-- Flytta delar av din kod från del 1 till funktioner och moduler.
-- Skapa minst en klass (t.ex. HealthAnalyzer) som kan utföra någon del av analysen (t.ex. beräkna statistik eller rita grafer).
-
-Linjär algebra i praktiken
-- Använd numpy eller scikit-learn för en analys som bygger på matriser/vektorer.
-- Exempel:
-- En enkel linjär regression för att förutsäga blodtryck från ålder eller vikt.
-- PCA för att hitta mönster i datan.
-
-Utökad analys och visualisering
-- Lägg till minst en ny analys eller graf som ger en djupare förståelse (t.ex. relationen mellan blodtryck och ålder, eller sjukdomsförekomst per kön).
-
-Dokumentation
-- Skriv docstrings till dina funktioner/klasser.
-- Använd markdown-rutor för att förklara vad du gör och varför.
-
-För VG ska du även göra:
-- Bygg en mer utvecklad klass som kan hantera flera olika analyser eller visualiseringar.
-- Använd en mer avancerad metod (t.ex. multipel regression) eller en extra visualisering som tydligt förklarar resultaten.
-- Motivera dina metodval i markdown och hänvisa till dokumentation eller annan källa.
+Python-version: **Fyll i din Python-version här.**
