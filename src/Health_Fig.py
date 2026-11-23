@@ -56,7 +56,7 @@ class HealthFig:
         fig.savefig("../Figures/blodtryck hos rökare.png", dpi=150)
         plt.show()
 
-    def fig_regression(self, blodtryck, prediktion, residualer):
+    def fig_regression(self, prediktion, residualer):
           """Skapar ett residualdiagram som visar skillnaden mellan verkligt och beräknat blodtryck."""
           fig, scatter = plt.subplots()
 

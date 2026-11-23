@@ -39,10 +39,10 @@ class HealthAnalyzer:
          
          R = 1000
          
-         means_n1000 = np.array([self.bootstrap_mean(bp_boot, rng) for _ in range(R)])
+         bootstrap_medelvarden = np.array([self.bootstrap_mean(bp_boot, rng) for _ in range(R)])
          
-         under_boot = np.percentile(means_n1000, 2.5)
-         upper_boot = np.percentile(means_n1000, 97.5)
+         under_boot = np.percentile(bootstrap_medelvarden, 2.5)
+         upper_boot = np.percentile(bootstrap_medelvarden, 97.5)
 
          return under_boot, upper_boot
     
